@@ -10,6 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import model.Escola;
+import model.Jurado;
 import model.Quesito;
 
 public class TelaApuracao extends JFrame {
@@ -48,11 +50,11 @@ public class TelaApuracao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JComboBox comboBox_e = new JComboBox();
+		JComboBox<Escola> comboBox_e = new JComboBox<Escola>();
 		comboBox_e.setBounds(223, 40, 203, 20);
 		contentPane.add(comboBox_e);
 		
-		JComboBox comboBox_j = new JComboBox();
+		JComboBox<Jurado> comboBox_j = new JComboBox<Jurado>();
 		comboBox_j.setBounds(223, 87, 180, 20);
 		contentPane.add(comboBox_j);
 		
