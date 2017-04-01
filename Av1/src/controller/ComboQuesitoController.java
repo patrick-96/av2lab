@@ -27,8 +27,10 @@ public class ComboQuesitoController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		System.out.println("oi");		
+		IQuesitoController qController=new QuesitoController(comboBox_q);
+		qController.listaQuesito();
 		
-		IQuesitoController qControlller=new QuesitoController(comboBox_q);
 		
 	}
 
