@@ -6,27 +6,27 @@ import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
-import model.Escola;
-import persistence.EscolaDao;
+import model.Quesito;
+import persistence.QuesitoDao;
 
 public class QuesitoController implements IQuesitoController{
-	private JComboBox<Escola> comboBox_e;
+	private JComboBox<Quesito> comboBox_q;
 	
-	public QuesitoController(JComboBox<Escola> comboBox_e){
-		this.comboBox_e=comboBox_e;
+	public QuesitoController(JComboBox<Quesito> comboBox_q){
+		this.comboBox_q=comboBox_q;
 		
 	}
 	@Override
 	public void listaQuesito() {
 		try {
-			EscolaDao eDao = new EscolaDao();
-			List<Escola> listaEscola =eDao.consultaEscolas();
-			if(comboBox_e.getItemCount()>0){
-				comboBox_e.removeAllItems();
+			QuesitoDao qDao = new QuesitoDao();
+			List<Quesito> listaQuesito =qDao.consultaQuesitos();
+			if(comboBox_q.getItemCount()>0){
+				comboBox_q.removeAllItems();
 			}
-			if(listaEscola!= null){
-				for(Escola e: listaEscola){
-					comboBox_e.addItem(e);
+			if(listaQuesito!= null){
+				for(Quesito q: listaQuesito){
+					comboBox_q.addItem(q);
 				}
 			}
 		} catch (ClassNotFoundException | SQLException e) {

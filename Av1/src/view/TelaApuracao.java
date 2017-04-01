@@ -21,7 +21,7 @@ public class TelaApuracao extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField textFieldNota;
 
 	/**
 	 * Launch the application.
@@ -62,10 +62,10 @@ public class TelaApuracao extends JFrame {
 		comboBox_q.setBounds(223, 132, 180, 20);
 		contentPane.add(comboBox_q);
 		
-		textField = new JTextField();
-		textField.setBounds(123, 253, 86, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textFieldNota = new JTextField();
+		textFieldNota.setBounds(123, 253, 86, 20);
+		contentPane.add(textFieldNota);
+		textFieldNota.setColumns(10);
 		
 		JLabel lblNota = new JLabel("Nota:");
 		lblNota.setBounds(48, 256, 38, 14);
