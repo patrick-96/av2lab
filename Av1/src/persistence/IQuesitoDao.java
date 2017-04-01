@@ -9,6 +9,6 @@ import model.Quesito;
 public interface IQuesitoDao {
 public List<Quesito> consultaQuesitos() throws SQLException;
 
-public int proximoId() throws SQLException;
+
 
 }
