@@ -9,7 +9,7 @@ import java.util.List;
 
 import model.Quesito;
 
-public class QuesitoDao implements IQuesitoDao{
+public  class QuesitoDao implements IQuesitoDao{
 private Connection c;
 public QuesitoDao() throws ClassNotFoundException, SQLException{
 	IGenericDao gDao=new GenericDao();
@@ -34,17 +34,6 @@ public QuesitoDao() throws ClassNotFoundException, SQLException{
 		ps.close();
 		return listaQuesito;
 	}
-	@Override
-	public int proximoId() throws SQLException {
-		String sql="Select MAX(id_q) + 1 AS proximo_id from Quesito";
-		PreparedStatement ps=c.prepareStatement(sql);
-		ResultSet rs=ps.executeQuery();
-		if(rs.next()){
-			return rs.getInt("proximo_id");
-		}
-		else {
-			return 1;
-		}
-	}
+	
 
 }
