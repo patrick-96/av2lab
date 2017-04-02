@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import controller.QuesitoController;
 import model.Escola;
 import model.Jurado;
 import model.Quesito;
@@ -94,5 +95,8 @@ public class TelaApuracao extends JFrame {
 		JButton btnInserir = new JButton("Inserir");
 		btnInserir.setBounds(232, 252, 80, 23);
 		contentPane.add(btnInserir);
+		
+		
+		
 	}
 }

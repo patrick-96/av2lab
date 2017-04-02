@@ -19,10 +19,10 @@ public QuesitoDao() throws ClassNotFoundException, SQLException{
 	@Override
 	public List<Quesito> consultaQuesitos() throws SQLException {
 		List<Quesito> listaQuesito=new ArrayList<Quesito>();
-		String sql="Select id_q,nome_q from Quesito";
+		String sql="Select * from Quesito";
 		PreparedStatement ps=c.prepareStatement(sql);
 		ResultSet rs=ps.executeQuery();
-		
+		System.out.println("oi"+rs);
 		while(rs.next()){
 			Quesito que= new Quesito();
 			que.setId_q(rs.getInt("id_q"));
@@ -32,6 +32,7 @@ public QuesitoDao() throws ClassNotFoundException, SQLException{
 		}
 		rs.close();
 		ps.close();
+		c.close();
 		return listaQuesito;
 	}
 	
