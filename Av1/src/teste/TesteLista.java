@@ -1,4 +1,4 @@
-package persistence;
+package teste;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -11,8 +11,8 @@ public class TesteLista {
 		QuesitoDao q=new QuesitoDao();
 		List<Quesito> que =q.consultaQuesitos();
 		for(Quesito quesito : que){
-			System.out.println("id"+quesito.getId_q());
-			System.out.println("nome "+quesito.getNome_q());
+			System.out.println("id : "+quesito.getId_q());
+			System.out.println("nome : "+quesito.getNome_q());
 			
 		}
 	

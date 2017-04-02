@@ -1,7 +1,9 @@
-package persistence;
+package teste;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+
+import persistence.GenericDao;
 
 public class TestaConexao {
 	public static void main(String[]args) throws SQLException{

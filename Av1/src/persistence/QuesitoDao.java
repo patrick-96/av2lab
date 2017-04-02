@@ -22,8 +22,7 @@ public QuesitoDao() throws ClassNotFoundException, SQLException{
 		String sql="Select * from Quesito";
 		PreparedStatement ps=c.prepareStatement(sql);
 		ResultSet rs=ps.executeQuery();
-		System.out.println("oi"+rs);
-		while(rs.next()){
+			while(rs.next()){
 			Quesito que= new Quesito();
 			que.setId_q(rs.getInt("id_q"));
 			que.setNome_q(rs.getString("nome_q"));
