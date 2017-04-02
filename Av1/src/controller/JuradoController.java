@@ -10,10 +10,10 @@ import model.Escola;
 import model.Jurado;
 import persistence.JuradoDao;
 
-public class JuradoControlller<comboBox_j> implements IJuradoController{
+public class JuradoController<comboBox_j> implements IJuradoController{
 	private JComboBox<Jurado> comboBox_j;
 	
-	public JuradoControlller(JComboBox<Jurado> comboBox_j){
+	public JuradoController(JComboBox<Jurado> comboBox_j){
 		this.comboBox_j=comboBox_j;
 	}
 

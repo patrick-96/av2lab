@@ -11,6 +11,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import controller.ComboQuesitoController;
+import controller.EscolaController;
+import controller.JuradoController;
 import controller.QuesitoController;
 import model.Escola;
 import model.Jurado;
@@ -99,6 +101,10 @@ public class TelaApuracao extends JFrame {
 
 		QuesitoController qController = new QuesitoController(comboBox_q);
 		qController.listaQuesito();
+		EscolaController eController = new EscolaController(comboBox_e);
+		eController.listaEscola();
+		JuradoController jController = new JuradoController(comboBox_j);
+		jController.listaJurado();
 
 	}
 }
