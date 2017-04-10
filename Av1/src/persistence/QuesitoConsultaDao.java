@@ -1,5 +1,6 @@
 package persistence;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,34 +28,36 @@ public class QuesitoConsultaDao {
 	
 	public List<QuesitoConsulta> consultaQuesitoQuesito()throws SQLException{
 		List<QuesitoConsulta> listaQuesitoConsulta=new ArrayList<QuesitoConsulta>();
-			try {
+			//try {
 			
-			String sql = "exec pc_verificaQ ?";
-			PreparedStatement ps = c.prepareStatement(sql);
-		    ps.setString(1, comboBox_q.getSelectedItem().toString());
-			ResultSet rs = ps.executeQuery();
+					String sql = "exec pc_verificaQ ?";
+					
+			CallableStatement cs = c.prepareCall(sql);
+			cs.setString(1,(String) comboBox_q.getSelectedItem().toString());
+		    
+			ResultSet rs = cs.executeQuery();
 			while (rs.next()) {
 			QuesitoConsulta qc = new QuesitoConsulta();
-			qc.setNome_e(rs.getString("nome_e"));
-			qc.setNome_q(rs.getString("nome_q"));
+			qc.setNome_e(rs.getString("Escola"));
+			qc.setNome_q(rs.getString("Quesito"));
 			qc.setNota1(rs.getDouble("nota1"));
 			qc.setNota2(rs.getDouble("nota2"));
 			qc.setNota3(rs.getDouble("nota3"));
 			qc.setNota4(rs.getDouble("nota4"));
 			qc.setNota5(rs.getDouble("nota5"));
-			qc.setMaior(rs.getDouble("maior"));
-			qc.setMenor(rs.getDouble("menor"));
-			qc.setTotal(rs.getDouble("total"));
+			qc.setMaior(rs.getDouble("Maior_Descartada"));
+			qc.setMenor(rs.getDouble("Menor_Descarta"));
+			qc.setTotal(rs.getDouble("Total"));
 			listaQuesitoConsulta.add(qc);
 			}
 			System.out.println("oi");
-			ps.execute();
+			cs.execute();
 			rs.close();	
-			ps.close();
+			cs.close();
 			
-			} catch (SQLException ex) {
-JOptionPane.showMessageDialog(null, ex.getStackTrace(),"Erro", JOptionPane.ERROR_MESSAGE);
-			}
+			//} catch (SQLException ex) {
+//JOptionPane.showMessageDialog(null, ex.getStackTrace(),"Erro", JOptionPane.ERROR_MESSAGE);
+			//}
 			return listaQuesitoConsulta;
 			}
 
