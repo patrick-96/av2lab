@@ -4,19 +4,16 @@ import java.awt.EventQueue;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import controller.EscolaController;
 import controller.QuesitoConsultaController;
 import model.Quesito;
-
-import javax.swing.JScrollPane;
 
 public class TelaQuesito {
 
 	public JFrame frame;
-	private JTable table;
 	private JTable table_Quesito;
 	private JScrollPane scrollPane_1;
 	JComboBox<Quesito> comboBox_q;
@@ -71,7 +68,8 @@ public class TelaQuesito {
 				}
 			);
 		table_Quesito.setModel(modelo);
-		table_Quesito.getColumnModel().getColumn(7).setPreferredWidth(111);
+		
+		
 		/*DefaultTableModel modelo = new DefaultTableModel(new Object[][] {},
 				new String[] { "Escola", "Quesito", "Maior descartada", "Menor Descartada", "Total" });*/
 

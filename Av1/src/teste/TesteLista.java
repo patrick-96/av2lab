@@ -3,7 +3,10 @@ package teste;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.swing.JComboBox;
+
 import model.Quesito;
+import persistence.QuesitoConsultaDao;
 import persistence.QuesitoDao;
 
 public class TesteLista {
@@ -13,6 +16,7 @@ public class TesteLista {
 		for(Quesito quesito : que){
 			System.out.println("id : "+quesito.getId_q());
 			System.out.println("nome : "+quesito.getNome_q());
+		
 			
 		}
 	
