@@ -25,6 +25,6 @@ public class Escola {
 	@Override
 	public String toString() {
 		
-		return this.nome_e;
+		return nome_e;
 	}
 }

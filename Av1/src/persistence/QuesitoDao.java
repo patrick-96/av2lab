@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Escola;
 import model.Quesito;
 
 public  class QuesitoDao implements IQuesitoDao{
@@ -24,7 +25,6 @@ public QuesitoDao() throws ClassNotFoundException, SQLException{
 		ResultSet rs=ps.executeQuery();
 			while(rs.next()){
 			Quesito que= new Quesito();
-			que.setId_q(rs.getInt("id_q"));
 			que.setNome_q(rs.getString("nome_q"));
 			listaQuesito.add(que);
 			
@@ -34,6 +34,8 @@ public QuesitoDao() throws ClassNotFoundException, SQLException{
 		c.close();
 		return listaQuesito;
 	}
+	
+
 	
 
 }

@@ -10,13 +10,16 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import controller.ComboQuesitoController;
+import controller.BotaoController;
 import controller.EscolaController;
 import controller.JuradoController;
 import controller.QuesitoController;
+import controller.VerQuesitoController;
+import controller.VerTotalController;
 import model.Escola;
 import model.Jurado;
 import model.Quesito;
+import persistence.JuradoDao;
 
 public class TelaApuracao extends JFrame {
 
@@ -24,6 +27,7 @@ public class TelaApuracao extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	public JFrame TelaApuracao;
 	private JPanel contentPane;
 	private JTextField textFieldNota;
 
@@ -98,13 +102,22 @@ public class TelaApuracao extends JFrame {
 		JButton btnInserir = new JButton("Inserir");
 		btnInserir.setBounds(232, 252, 80, 23);
 		contentPane.add(btnInserir);
-
+		
 		QuesitoController qController = new QuesitoController(comboBox_q);
 		qController.listaQuesito();
 		EscolaController eController = new EscolaController(comboBox_e);
 		eController.listaEscola();
 		JuradoController jController = new JuradoController(comboBox_j);
 		jController.listaJurado();
+		//BotaoController btController=new BotaoController(textFieldNota, lblEscola, lblJurado, lblQuesito, lblNota, comboBox_q, comboBox_j, comboBox_e, btnVerQuesito, btnVerTotal, btnInserir);
+		//btnInserir.addActionListener(btController).;
+		BotaoController bt = new BotaoController(textFieldNota, lblEscola, lblJurado, lblQuesito, lblNota, comboBox_q, comboBox_j, comboBox_e, btnVerQuesito, btnVerTotal, btnInserir);
+		btnInserir.addActionListener(bt);
+		VerTotalController vtc=new VerTotalController(TelaApuracao,btnVerTotal);
+		btnVerTotal.addActionListener(vtc);
+		VerQuesitoController qtc=new VerQuesitoController(TelaApuracao, btnVerQuesito);
+		btnVerQuesito.addActionListener(qtc);
+		
 
 	}
 }

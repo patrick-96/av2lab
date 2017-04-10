@@ -6,7 +6,6 @@ import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
-import model.Escola;
 import model.Jurado;
 import persistence.JuradoDao;
 
@@ -26,7 +25,7 @@ public class JuradoController<comboBox_j> implements IJuradoController{
 				comboBox_j.removeAllItems();
 			}
 			if(listaJurado!= null){
-				for(Jurado j: listaJurado){
+				for(Jurado j: jDao.consultaJurados()){
 					comboBox_j.addItem(j);
 				}
 			}

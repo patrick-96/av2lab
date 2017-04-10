@@ -18,7 +18,7 @@ public class Quesito {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return this.nome_q;
+		return nome_q;
 	}
 	
 

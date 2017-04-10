@@ -26,9 +26,7 @@ public class EscolaDao implements IEscolaDao{
 		
 		while(rs.next()){
 			Escola es= new Escola();
-			es.setId_e(rs.getInt("id_e"));
 			es.setNome_e(rs.getString("nome_e"));
-			es.setTotal_pontos(rs.getDouble("total_pontos"));
 			listaEscola.add(es);
 			
 		}
@@ -36,5 +34,24 @@ public class EscolaDao implements IEscolaDao{
 		ps.close();
 		return listaEscola;
 	}
+	
+	public List<Escola> consultaTotal()throws SQLException{
+	List<Escola> listaEscola=new ArrayList<Escola>();
+	String sql="select nome_e,dbo.fn_total(id_e) as total_pontos from Escola order by total_pontos";
+	PreparedStatement ps=c.prepareStatement(sql);
+	ResultSet rs=ps.executeQuery();
+	while(rs.next()){
+		Escola es=new Escola();
+		es.setNome_e(rs.getString("nome_e"));
+		es.setTotal_pontos(rs.getDouble("total_pontos"));
+		listaEscola.add(es);
+	}
+	rs.close();
+	ps.close();
+	return listaEscola;
+	
+	}
+	
+	
 
 }
